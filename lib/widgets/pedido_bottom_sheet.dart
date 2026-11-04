@@ -61,7 +61,7 @@ class PedidoBottomSheet extends StatelessWidget {
                 child: ListView.separated(
                   shrinkWrap: true,
                   itemCount: pedidos.length,
-                  separatorBuilder: (_, __) => const Divider(height: 20),
+                  separatorBuilder: (_, _) => const Divider(height: 20),
                   itemBuilder: (context, index) {
                     final producto = pedidos[index];
                     final cantidad = cantidades[producto.id] ?? 0;

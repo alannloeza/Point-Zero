@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:point_zero/screens/home_screen.dart';
+
 import 'main_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -9,7 +9,8 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
   late Animation<double> _scaleAnimation;
@@ -40,12 +41,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   // Al estar dentro de la clase State, 'mounted' y 'context' son reconocidos
   Future<void> _navigateToNextScreen() async {
     await Future.delayed(const Duration(seconds: 3));
-    
+
     if (!mounted) return;
 
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()), 
+      MaterialPageRoute(builder: (context) => const MainScreen()),
     );
   }
 
@@ -64,11 +65,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF2E6B52),
-              Color(0xFF255844),
-              Color(0xFF1B4031),
-            ],
+            colors: [Color(0xFF2E6B52), Color(0xFF255844), Color(0xFF1B4031)],
           ),
         ),
         child: Column(

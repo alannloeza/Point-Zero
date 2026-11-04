@@ -8,7 +8,9 @@ import '../widgets/pedido_bottom_sheet.dart';
 import '../widgets/producto_card.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, this.carrito});
+
+  final Map<int, int>? carrito;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -22,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // Carrito de demostración: 2 enchiladas = $220, como en la referencia.
   // Cambia a {} si quieres empezar con el carrito vacío.
-  final Map<int, int> _carrito = {1: 2};
+  late final Map<int, int> _carrito = widget.carrito ?? {1: 2};
 
   List<Producto> get _productosVisibles => _productos.where((producto) {
         final coincideCategoria = _categoria == Categoria.todos ||
