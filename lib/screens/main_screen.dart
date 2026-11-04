@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'splash_screen.dart'; // <-- Verifica que esté importado
 
-/// Entrada principal de la aplicación.
-/// Aquí podrás añadir navegación inferior cuando la necesites.
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) => const HomeScreen();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Sistema de Comandas',
+      debugShowCheckedModeBanner: false,
+      // Aquí es donde obligas a la app a iniciar en el Splash
+      home: const SplashScreen(), 
+    );
+  }
 }
